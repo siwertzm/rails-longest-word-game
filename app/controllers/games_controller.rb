@@ -11,7 +11,7 @@ class GamesController < ApplicationController
   def score
     @letters = JSON.parse(params[:grid])
     # fonction de vérification de la présence des lettres dans le mot
-    if (check_letters?(params[:word], JSON.parse(params[:grid])) && check_word?(params[:word]))
+    if check_letters?(params[:word], JSON.parse(params[:grid])) && check_word?(params[:word])
       @result = "Congratulations! #{params[:word]} is a word!"
       @score = 2 ** params[:word].length
       session[:score] = session[:score].to_i + @score
