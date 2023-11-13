@@ -1,0 +1,26 @@
+<div>
+  <h1 class="text-center mb-3">Your Score</h1>
+
+  <div class="d-flex justify-content-center">
+      <% @letters.each do |letter| %>
+        <div class="letter-box">
+          <p class="letter"><strong><%= letter %></strong></p>
+        </div>
+      <% end %>
+  </div>
+
+  <div class="card m-5 p-3">
+      <div class="mb-3">
+        <p class="text-center"><%= @result %></p>
+        <div class="d-flex justify-content-center">
+          <p class="text-center mt-4"><%= @answer %></p>
+          <div class="letter-box">
+            <p class="letter"><strong><%= session[:score] %></strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to 'new game', new_path %>
+      </div>
+  </div>
+</div>
